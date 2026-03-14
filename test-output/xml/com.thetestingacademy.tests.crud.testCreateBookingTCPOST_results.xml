@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="APIAutomationFramworkATB7x"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="5.716">
+    <properties></properties>
+
+
+
+            <testcase
+                name="testVerifyCreateBookingPOST01"
+                time="5.716"
+                classname="com.thetestingacademy.tests.crud.testCreateBookingTCPOST">
+            </testcase>
+</testsuite>
