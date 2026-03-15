@@ -2,9 +2,7 @@ package com.thetestingacademy.modules;
 
 import com.github.javafaker.Faker;
 import com.google.gson.Gson;
-import com.thetestingacademy.pojos.Booking;
-import com.thetestingacademy.pojos.BookingDates;
-import com.thetestingacademy.pojos.BookingResponse;
+import com.thetestingacademy.pojos.*;
 
 public class PayloadManager {
     Gson gson;
@@ -62,4 +60,45 @@ public String CreatePayloadBookingAsString()
         BookingResponse bookingResponse = gson.fromJson(responseString, BookingResponse.class);
         return bookingResponse;
     }
+
+    public String setAuthPayload(){
+    //Auth Object to JSON String conversion
+    Auth auth=new Auth();
+    auth.setUsername("admin");
+    auth.setPassword("password123");
+    gson=new Gson();
+    String jsonPayloadString=gson.toJson(auth);
+        System.out.println("Payload set to the->"+ jsonPayloadString);
+        return jsonPayloadString;
+    }
+    public String getTokenFromJSON(String tokenResponse)
+    {
+        gson=new Gson();
+        TokenResponse tokenResponse1=gson.fromJson(tokenResponse,TokenResponse.class);
+        return tokenResponse1.getToken();
+    }
+    public Booking getResponseFromJSON(String getResponse)
+
+    {
+        gson=new Gson();
+        //Response JSON->>>Object Token Response
+        //Deserialization
+        Booking booking=gson.fromJson(getResponse,Booking.class);
+        return booking;
+    }
+    public String fullUpdatePayloadAsString() {
+        Booking booking = new Booking();
+        booking.setFirstname("Pramod");
+        booking.setLastname("Dutta");
+        booking.setTotalprice(112);
+        booking.setDepositpaid(true);
+
+        BookingDates bookingdates = new BookingDates();
+        bookingdates.setCheckin("2024-02-01");
+        bookingdates.setCheckout("2024-02-05");
+        booking.setBookingdates(bookingdates);
+        booking.setAdditionalneeds("Breakfast");
+        return gson.toJson(booking);
+    }
+
 }
