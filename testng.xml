@@ -1,10 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="APIAutomationFramworkATB7x">
-    <classes><class name="com.thetestingacademy.tests.crud.testCreateBookingPOST">
-        <methods>
-            <include name="testVerifyCreateBookingPOST"/>
-        </methods>
-    </class>
-    </classes></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/Sanket/IdeaProjects/APIAutomationFramworkATB7x"><classes><class name="com.thetestingacademy.tests.crud.testCreateBookingTCPOST"><methods><include name="testVerifyCreateBookingPOST01"/></methods></class><class name="com.thetestingacademy.tests.integration.TCIntegrationFlow"><methods><include name="testCreateBooking"/><include name="testVerifyBookingId"/><include name="testUpdateBookingById"/><include name="testDeleteBookingById"/></methods></class><class name="com.thetestingacademy.tests.integration.TCIntegrationSample"><methods><include name="testCreateBooking"/><include name="testVerifyBookingId"/><include name="testUpdateBookingByID"/><include name="testDeleteBookingById"/></methods></class></classes></test></suite>
